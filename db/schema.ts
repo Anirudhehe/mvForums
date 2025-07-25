@@ -1,0 +1,9 @@
+
+import { pgTable,text,uuid,varchar} from "drizzle-orm/pg-core";
+
+export const blogsTable = pgTable('blogs',{
+    id: uuid().primaryKey().defaultRandom(),
+    title:varchar({length:80}).notNull(),
+    body:text().notNull(),
+    orgId:text().notNull(),
+})
